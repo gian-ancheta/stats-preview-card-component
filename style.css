@@ -1,0 +1,289 @@
+/*
+ *                  CONTENTS
+ * CUSTOM PROPERTIES
+ * ....colors
+ * ....fonts
+ * ....sizes
+ *
+ * GENERIC
+ * ....box-sizing
+ * ....resets
+ * ....elements
+ *
+ * CARD
+ * ....card
+ * ....card heading
+ * ....card description
+ *
+ * STATS
+ * ....stat
+ * ....stat heading
+ * ....stat description
+ *
+ * CLASSES
+ * ....colors
+ * ....text-layout
+ * ....layout
+ */
+
+
+
+
+
+
+
+
+
+
+/*----------------------------*\
+    #CUSTOM PROPERTIES
+\*----------------------------*/
+
+/* Colors */
+html {
+    --body-background-color: hsl(233, 47%, 7%);
+    --card-background-color: hsl(244, 38%, 16%);
+    --card-description-color: hsla(0, 0%, 100%, 0.75);
+    --stat-heading-color: hsla(0, 0%, 100%, 0.6);
+    --purple: hsl(277, 64%, 61%);
+    --white: hsl(0, 0%, 100%);
+}
+
+
+
+
+
+/* Fonts */
+html {
+    --base-font: 400 15px 'Inter', sans-serif;
+    --bold: 700;
+}
+
+
+
+
+
+/* Sizes */
+html {
+    --mobile: 375px;
+    --desktop: 1440px;
+}
+
+
+
+
+
+
+
+
+
+
+/*----------------------------*\
+    #GENERIC 
+\*----------------------------*/
+
+/* Box-sizing */
+html                   { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit;    }
+
+
+
+
+
+/* Resets */
+* { margin: 0; padding: 0; }
+
+
+
+
+
+/* Elements */
+html { font: var(--base-font); }
+
+body { 
+    background: var(--body-background-color);
+    color: var(--white); 
+}
+
+footer {
+    background-color: var(--card-background-color);
+    color: white;
+    font-size: 11px;
+    text-align: center;
+    padding: 1rem 0 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+/*----------------------------*\
+    #CARD
+\*----------------------------*/
+
+.card {
+    background-color: var(--card-background-color);
+    background-image: url(./images/image-header-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    text-align: center;
+    max-width: calc(0.9 * var(--mobile));
+    margin: 5rem auto;
+    border-radius: 0.6rem;
+    padding: 17rem 0 0.5rem 0;
+}
+
+@media screen and (min-width: 1440px) {
+    .card {
+        background-image: url(./images/image-header-desktop.jpg);
+        background-position: right;
+        text-align: left;
+        max-width: calc(0.8 * var(--desktop));
+        padding: 5rem;
+    }
+}
+
+
+
+
+
+.card__heading {
+    font-weight: var(--bold);
+    font-size: 1.8rem;
+    max-width: calc(0.8 * 0.9 * var(--mobile));
+    margin: 2.5rem auto 0;
+}
+
+@media screen and (min-width: 1440px) {
+    .card__heading {
+        font-size: 2.5rem;
+        max-width: initial;
+        margin: 0 35rem 2rem 0;
+    }
+}
+
+
+
+
+
+.card__description {
+    color: var(--card-description-color);
+    line-height: 1.7;
+    max-width: calc(0.8 * 0.9 * var(--mobile));
+    margin: 1.5rem auto 3rem;
+}
+
+@media screen and (min-width: 1440px) {
+    .card__description {
+        max-width: initial;
+        margin: 0 41rem 4rem 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*----------------------------*\
+    #STATS
+\*----------------------------*/
+
+.stat {
+    list-style-type: none;
+    margin: 0 0 2rem 0;
+}
+
+@media screen and (min-width: 1440px) {
+    .stat {
+        margin: 0 4.8rem 0 0;
+    }
+}
+
+
+
+
+
+.stat__heading {
+    font-weight: var(--bold);
+    font-size: 1.5rem;
+}
+
+
+
+
+
+.stat__description {
+    color: var(--stat-heading-color);
+    font-size: 0.7rem;
+    font-family: 'Lexend Deca', sans-serif;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+/*----------------------------*\
+    #CLASSES
+\*----------------------------*/
+
+/* Colors */
+.color-purple { color: var(--purple); }
+
+
+
+
+
+/* Text layout */
+.hide-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+
+
+
+
+/* Layout */
+@media screen and (min-width: 1440px) {
+    .main-grid {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .display-flex {
+        display: flex;
+    }
+}
+
+
+
+
+
+/* Hovers */
+.attribution-link-hover:hover {
+    color: var(--white);
+}
